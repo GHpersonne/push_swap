@@ -1,37 +1,42 @@
-NAME = push_swap.a
+NAME = push_swap
+LIBFT = Libft/libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -MMD -MP
-SRCS = srcs
-INCLUDES = includes
+SRC_DIR = srcs
+OBJ_DIR = .obj
+INCLUDES_DIR = includes
 
-SRC_MANDATORY = $(SRCS)/push_swap.c \
-				$(SRCS)/parser.c \
-				$(SRCS)/
+SRC_FILES = push_swap.c \
+			parser.c \
+			main.c
 
-INC_MANDATORY = $(INCLUDES)/ \
-				$(INCLUDES)/ \
-				$(INCLUDES)/
+INC_FILES = push_swap.h \
 
-OBJ_FILES = $(patsubst $(SRCS)/%.c, $(OBJ_DIR)/%.o, $(SRC_MANDATORY))
-DEPS_FILES = $(OBJ_FILES:.o=.d)
+OBJ_FILES = $(SRC_FILES:.c=.o)
 
-all: $(NAME)
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
+HEADERS = $(addprefix $(INCLUDES_DIR)/, $(INC_FILES))
 
-$(OBJ_DIR)/%.o : $(SRCS)/%.c
-	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
+all: $(LIBFT) $(NAME)
 
--include $(DEPS_FILES)
+$(NAME): $(OBJS) $(HEADERS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
-$(NAME): $(OBJ_FILES)
-	ar crs $(NAME) $(OBJ_FILES)
+$(LIBFT):
+	make bonus -C ./Libft
 
-re: fclean $(NAME)
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADERS)
+	@mkdir -p .obj
+	$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
+
+re: fclean all
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(LIBFT)
 
 clean:
 	rm -rf $(OBJ_DIR)
+	make clean -C ./Libft
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re $(LIBFT)

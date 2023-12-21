@@ -1,7 +1,6 @@
 #include "push_swap.h"
-#include <fntcl.h>
 
-int	main(void)
+int	main(int ac, char *av)
 {
 	
 	return (0);

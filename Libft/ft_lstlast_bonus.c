@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2023/12/20 18:51:38 by anjambon         ###   ########.fr       */
+/*   Created: 2023/11/09 11:49:04 by anjambon          #+#    #+#             */
+/*   Updated: 2023/11/09 11:59:51 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-typedef struct s_list
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		content;
-	void	*next;
-	void	*prev;
-}	t_list,
+	t_list	*current;
 
-#endif
+	if (!lst)
+		return (NULL);
+	current = lst;
+	while (current->next)
+		current = current->next;
+	return (current);
+}
