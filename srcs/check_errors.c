@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/22 16:16:41 by anjambon          #+#    #+#             */
-/*   Updated: 2023/12/22 18:34:49 by anjambon         ###   ########.fr       */
+/*   Created: 2023/12/22 16:56:00 by anjambon          #+#    #+#             */
+/*   Updated: 2023/12/22 18:34:16 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "../Libft/libft.h"
+#include <limits.h>
 
-int	main(int argc, char **argv)
+int	check_input(int argc, char **argv)
 {
-	if (check_input(argc, argv) == 0)
-		ft_putstr_fd("Error\n", 0);
+	int	i;
+
+	i = 0;
+	if (argc < 1)
+	{
+		while (i <= argc)
+		{
+			if (!(ft_atoi(argv[i]) <= INT_MAX && ft_atoi(argv[i]) >= INT_MIN))
+				return (ft_putstr_fd("false", 1), 0);
+			i++;
+		}
+	}
 	else
-		ft_putstr_fd("all good", 1);
+		return (1);
 	return (0);
 }

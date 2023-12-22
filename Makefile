@@ -8,7 +8,8 @@ INCLUDES_DIR = includes
 
 SRC_FILES = push_swap.c \
 			parser.c \
-			main.c
+			main.c \
+			check_errors.c
 
 INC_FILES = push_swap.h \
 
