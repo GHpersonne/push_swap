@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/01 23:53:01 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/02 00:17:38 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		return (0);
 	while (stack_a)
 	{
-		printf("%ld", stack_a->nb);
+		printf("%ld\n", stack_a->nb);
 		stack_a = stack_a->next;
 	}
 	free_stack(&stack_a);

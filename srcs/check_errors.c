@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:56:00 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/02 00:07:23 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/02 00:15:49 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void	check_digits(char *str)
 	i = 0;
 	if ((str[0] == '-' || str[0] == '+') && str[1])
 		i++;
-	while (str[i++])
+	while (str[i])
+	{
 		if (!ft_isdigit(str[i]))
 			ft_error();
+		i++;
+	}
 }
