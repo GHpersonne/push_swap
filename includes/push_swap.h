@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/01 23:55:02 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/02 16:32:37 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 typedef struct s_stack
 {
-	long	nb;
-	void	*next;
+	long			nb;
+	struct s_stack	*next;
 }	t_stack;
 
 void		check_limits(long long int nb);

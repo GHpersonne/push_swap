@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 23:30:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/02 00:06:10 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/02 16:33:37 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,31 @@ void	add_to_stack(t_stack **stack, int n)
 {
 	t_stack	*stack_a;
 
+	if (!stack)
+		return ;
 	stack_a = malloc(sizeof(t_stack));
 	if (!stack_a)
 		ft_error();
 	stack_a->nb = n;
 	stack_a->next = 0;
-	if (!stack)
-		return ;
 	if (!*stack)
 		*stack = stack_a;
 	else
 		(ft_lstlast_for_add(*stack))->next = stack_a;
 }
 
+char	*split_args(char **argv)
+{
+	int	i;
+
+	i = 0;
+}
+
 t_stack	*args_in_stack_a(int argc, char **argv)
 {
-	int				i;
 	long long int	nb;
 	t_stack			*stack_a;
+	int				i;
 
 	stack_a = 0;
 	i = 1;
