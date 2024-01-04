@@ -6,11 +6,34 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/04 01:47:37 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/04 01:54:45 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	ft_rrr_cont(t_stack **b, int j)
+{
+	t_stack	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = *b;
+	while ((*b)->next)
+	{
+		i++;
+		*b = (*b)->next;
+	}
+	(*b)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = 0;
+	if (j == 0)
+		write(1, "rrr\n", 4);
+}
 
 void	ft_rrr(t_stack **a, t_stack **b, int j)
 {

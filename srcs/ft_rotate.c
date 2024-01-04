@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:18 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/04 01:42:29 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/04 01:54:12 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_rb(t_stack **b, int i)
 	if (!*b || !(*b)->next)
 		return ;
 	tmp = *b;
-	*b = ft_lstlast(*b);
+	*b = ft_real_lstlast(*b);
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = 0;
@@ -34,7 +34,7 @@ void	ft_ra(t_stack **a, int i)
 	if (!*a || !(*a)->next)
 		return ;
 	tmp = *a;
-	*a = ft_lstlast(*a);
+	*a = ft_real_lstlast(*a);
 	(*a)->next = tmp;
 	*a = tmp->next;
 	tmp->next = 0;
