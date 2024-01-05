@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/04 01:53:50 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/05 19:00:31 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,19 @@ void		ft_error(void);
 t_stack		*args_in_stack_a(int argc, char **argv);
 void		free_stack(t_stack **stack);
 t_stack		*ft_real_lstlast(t_stack *lst);
+
+void		ft_pa(t_stack **a, t_stack **b, int j);
+/* void		ft_pb(t_stack **a, t_stack **b, int j);
+
+void		ft_sa(t_stack **a, int i);
+void		ft_sb(t_stack **b, int i);
+void		ft_sa(t_stack **a, t_stack **b, int i);
+
+void		ft_ra(t_stack **a, int i);
+void		ft_rb(t_stack **b, int i);
+
+void		ft_rra(t_stack **a, int j);
+void		ft_rrb(t_stack **b, int j);
+void		ft_rrr(t_stack **a, t_stack **b, int j); */
 
 #endif
