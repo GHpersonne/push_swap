@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/05 19:02:48 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:41:59 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,58 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_stack *tmp_a = NULL;
+	t_stack *tmp_b = NULL;
 
 	stack_a = args_in_stack_a(argc, argv);
+	tmp_a = stack_a;
 	if (!stack_a)
 		return (0);
+	add_to_stack(&stack_b, 2);
+	add_to_stack(&stack_b, 3);
+	add_to_stack(&stack_b, 4);
+	tmp_b = stack_b;
+
+	printf("------- Avant A -----\n");
 	while (stack_a)
 	{
-		printf("%ld\n", stack_a->nb);
+		printf("   %ld\n  ", stack_a->nb);
 		stack_a = stack_a->next;
 	}
+	printf("---------------------\n");
+	stack_a = tmp_a;
+
+	printf("------- Avant B -----\n");
+	while (stack_b)
+	{
+		printf("   %ld\n  ", stack_b->nb);
+		stack_b = stack_b->next;
+	}
+	printf("---------------------\n");
+	stack_b = tmp_b;
+
+/* 	ft_rb(&stack_b, 0);
+	ft_ra(&stack_a, 0); */
+	ft_rrr(&stack_a, &stack_b, 0);
+
+	printf("------- Apres A -----\n");
+	while (stack_a)
+	{
+		printf("   %ld\n  ", stack_a->nb);
+		stack_a = stack_a->next;
+	}
+	printf("---------------------\n");
+
+	printf("------- Apres B -----\n");
+	while (stack_b)
+	{
+		printf("   %ld\n  ", stack_b->nb);
+		stack_b = stack_b->next;
+	}
+	printf("---------------------\n");
+
+	free_stack(&stack_b);
 	free_stack(&stack_a);
 	return (0);
 }

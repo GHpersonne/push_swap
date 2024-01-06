@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 23:30:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/04 01:53:36 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:39:58 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,6 @@ void	add_to_stack(t_stack **stack, int n)
 	else
 		(ft_real_lstlast(*stack))->next = stack_a;
 }
-
-/* char	*split_args(char **argv)
-{
-	int	i;
-
-	i = 0;
-} */
 
 t_stack	*args_in_stack_a(int argc, char **argv)
 {

@@ -6,13 +6,13 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:17 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/04 01:49:25 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:43:40 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_pa(t_stack **a, t_stack **b, int j)
+void	ft_pa(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*tmp;
 
@@ -22,11 +22,11 @@ void	ft_pa(t_stack **a, t_stack **b, int j)
 	*a = *b;
 	*b = (*b)->next;
 	(*a)->next = tmp;
-	if (j == 0)
+	if (i == 0)
 		write(1, "pa\n", 3);
 }
 
-void	ft_pb(t_stack **a, t_stack **b, int j)
+void	ft_pb(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*tmp;
 
@@ -36,6 +36,6 @@ void	ft_pb(t_stack **a, t_stack **b, int j)
 	*b = *a;
 	*a = (*a)->next;
 	(*b)->next = tmp;
-	if (j == 0)
+	if (i == 0)
 		write(1, "pb\n", 3);
 }
