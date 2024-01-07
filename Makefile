@@ -9,12 +9,13 @@ INCLUDES_DIR = includes
 SRC_FILES = push_swap.c \
 			add_to_stack_a.c \
 			check_errors.c \
-			ft_errors.c \
+			ft_error.c \
 			free_stack.c \
 			ft_push.c \
 			ft_swap.c \
 			ft_rotate.c \
 			ft_reverse_rotate.c \
+			ft_is_sort.c
 
 INC_FILES = push_swap.h \
 

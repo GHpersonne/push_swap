@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 23:30:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/06 15:39:58 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/07 21:33:17 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ t_stack	*args_in_stack_a(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		check_digits(argv[i]);
+		check_digits(argv[i], &stack_a);
 		nb = ft_atoi(argv[i]);
-		check_limits(nb);
+		check_limits(nb, &stack_a);
 		add_to_stack(&stack_a, nb);
 		i++;
 	}

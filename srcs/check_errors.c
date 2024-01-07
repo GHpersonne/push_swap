@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:56:00 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/07 20:20:35 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/08 00:58:19 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 #include "../Libft/libft.h"
 #include <limits.h>
 
-void	check_limits(long long int nb)
+void	check_limits(long long int nb, t_stack **stack_a)
 {
 	if (nb > INT_MAX || nb < INT_MIN)
+	{
+		free_stack(stack_a);
 		ft_error();
+	}
 }
 
-void	check_digits(char *str)
+void	check_digits(char *str, t_stack **stack_a)
 {
 	int	i;
 
@@ -30,12 +33,15 @@ void	check_digits(char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
+		{
+			free_stack(stack_a);
 			ft_error();
+		}
 		i++;
 	}
 }
 
-void	double_numbers(t_stack *stack_a)
+int	check_double_numbers(t_stack *stack_a)
 {
 	t_stack	*tmp;
 
@@ -46,12 +52,10 @@ void	double_numbers(t_stack *stack_a)
 		while (tmp)
 		{
 			if (tmp->nb == stack_a->nb)
-			{
-				free_stack(&stack_a);
-				ft_error();
-			}
+				return (1);
 			tmp = tmp->next;
 		}
-		stack_a = stack_a->next;
+		*stack_a = *stack_a->next;
 	}
+	return (0);
 }
