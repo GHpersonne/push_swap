@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/06 15:48:36 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/07 21:02:13 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_stack		*args_in_stack_a(int argc, char **argv);
 void		free_stack(t_stack **stack);
 t_stack		*ft_real_lstlast(t_stack *lst);
 void		add_to_stack(t_stack **stack, int n);
+void		double_numbers(t_stack *stack_a);
 
 void		ft_pa(t_stack **a, t_stack **b, int j);
 void		ft_pb(t_stack **a, t_stack **b, int j);

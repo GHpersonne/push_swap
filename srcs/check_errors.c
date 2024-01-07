@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:56:00 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/02 00:15:49 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/07 20:20:35 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,26 @@ void	check_digits(char *str)
 		if (!ft_isdigit(str[i]))
 			ft_error();
 		i++;
+	}
+}
+
+void	double_numbers(t_stack *stack_a)
+{
+	t_stack	*tmp;
+
+	tmp = stack_a->next;
+	while (stack_a)
+	{
+		tmp = stack_a->next;
+		while (tmp)
+		{
+			if (tmp->nb == stack_a->nb)
+			{
+				free_stack(&stack_a);
+				ft_error();
+			}
+			tmp = tmp->next;
+		}
+		stack_a = stack_a->next;
 	}
 }

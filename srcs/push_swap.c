@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/06 18:41:59 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/07 21:04:32 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*stack_b = NULL;
 	t_stack *tmp_a = NULL;
 	t_stack *tmp_b = NULL;
 
 	stack_a = args_in_stack_a(argc, argv);
-	tmp_a = stack_a;
 	if (!stack_a)
 		return (0);
+	double_numbers(stack_a);
 	add_to_stack(&stack_b, 2);
 	add_to_stack(&stack_b, 3);
 	add_to_stack(&stack_b, 4);
+	tmp_a = stack_a;
 	tmp_b = stack_b;
 
 	printf("------- Avant A -----\n");
@@ -47,8 +48,8 @@ int	main(int argc, char **argv)
 	stack_b = tmp_b;
 
 /* 	ft_rb(&stack_b, 0);
-	ft_ra(&stack_a, 0); */
-	ft_rrr(&stack_a, &stack_b, 0);
+	ft_ra(&stack_a, 0); 
+	ft_rrr(&stack_a, &stack_b, 0);*/
 
 	printf("------- Apres A -----\n");
 	while (stack_a)
