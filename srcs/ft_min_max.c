@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_min_max.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 18:47:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/08 18:16:36 by anjambon         ###   ########.fr       */
+/*   Created: 2024/01/08 16:43:54 by anjambon          #+#    #+#             */
+/*   Updated: 2024/01/08 18:20:52 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_min(t_stack *stack)
 {
-	t_stack	*stack_a;
+	long	i;
 
-	stack_a = args_in_stack_a(argc, argv);
-	if (!stack_a)
-		return (0);
-	if (!(check_double_numbers(stack_a) == 0))
+	i = stack->nb;
+	while (stack)
 	{
-		free_stack(&stack_a);
-		ft_error();
+		if (i > stack->nb)
+			i = stack->nb;
+		stack = stack->next;
 	}
-	if (!ft_is_sort(stack_a))
-		printf("non");
-	//		ft_sort();
-	else
-		printf("oui");
-	free_stack(&stack_a);
-	return (0);
+	return (i);
+}
+
+int	ft_max(t_stack *stack)
+{
+	int	i;
+
+	i = stack->nb;
+	while (stack)
+	{
+		if (i < stack->nb)
+			i = stack->nb;
+		stack = stack->next;
+	}
+	return (i);
 }

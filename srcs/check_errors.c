@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:56:00 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/08 00:58:19 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:44:52 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	check_double_numbers(t_stack *stack_a)
 				return (1);
 			tmp = tmp->next;
 		}
-		*stack_a = *stack_a->next;
+		stack_a = stack_a->next;
 	}
 	return (0);
 }
