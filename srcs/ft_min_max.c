@@ -6,13 +6,13 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:43:54 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/08 18:20:52 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:39:28 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_min(t_stack *stack)
+long	ft_min(t_stack *stack)
 {
 	long	i;
 
@@ -26,9 +26,9 @@ int	ft_min(t_stack *stack)
 	return (i);
 }
 
-int	ft_max(t_stack *stack)
+long	ft_max(t_stack *stack)
 {
-	int	i;
+	long	i;
 
 	i = stack->nb;
 	while (stack)

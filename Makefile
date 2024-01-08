@@ -16,7 +16,8 @@ SRC_FILES = push_swap.c \
 			ft_rotate.c \
 			ft_reverse_rotate.c \
 			ft_is_sort.c \
-			ft_min_max.c
+			ft_min_max.c \
+			# ft_sort_three.c
 
 INC_FILES = push_swap.h \
 

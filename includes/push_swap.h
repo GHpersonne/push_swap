@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/08 18:21:08 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:58:38 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,18 @@ typedef struct s_stack
 
 void		check_limits(long long int nb, t_stack **stack_a);
 void		check_digits(char *str, t_stack **stack_a);
+int			check_double_numbers(t_stack *stack_a);
 void		ft_error(void);
+
 t_stack		*args_in_stack_a(int argc, char **argv);
 void		free_stack(t_stack **stack_a);
 t_stack		*ft_real_lstlast(t_stack *lst);
 void		add_to_stack(t_stack **stack, int n);
-int			check_double_numbers(t_stack *stack_a);
+
 int			ft_is_sort(t_stack *stack_a);
-int			ft_min(t_stack *stack);
-int			ft_max(t_stack *stack);
+t_stack		*sort_three_args(t_stack *stack_a);
+long		ft_min(t_stack *stack);
+long		ft_max(t_stack *stack);
 
 void		ft_pa(t_stack **a, t_stack **b, int j);
 void		ft_pb(t_stack **a, t_stack **b, int j);
