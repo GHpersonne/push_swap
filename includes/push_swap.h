@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/08 18:58:38 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/09 01:14:01 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_stack		*ft_real_lstlast(t_stack *lst);
 void		add_to_stack(t_stack **stack, int n);
 
 int			ft_is_sort(t_stack *stack_a);
-t_stack		*sort_three_args(t_stack *stack_a);
+int			ft_real_lstsize(t_stack *lst);
 long		ft_min(t_stack *stack);
 long		ft_max(t_stack *stack);
 
