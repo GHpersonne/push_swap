@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_is_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aniambon <aniambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 00:36:14 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/08 00:36:56 by anjambon         ###   ########.fr       */
+/*   Created: 2024/01/08 00:36:14 by aniambon          #+#    #+#             */
+/*   Updated: 2024/01/08 00:36:56 by aniambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_is_sort(t_stack *stack_a)
+int	ft_is_sorted(t_stack *stack_a)
 {
 	int	i;
 
@@ -25,4 +25,32 @@ int	ft_is_sort(t_stack *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (1);
+}
+
+int	circle_order_asc(t_stack *stack)
+{
+	int		i;
+	t_stack	*tmp;
+
+	i = 0;
+	if (stack && stack->next)
+	{
+		while (stack && stack->next && stack->nb < stack->next->nb)
+		{
+			stack = stack->next;
+			i++;
+		}
+		i++;
+		tmp = stack;
+		while (stack->next)
+		{
+			stack = stack->next;
+			i++;
+		}
+		if (stack != tmp)
+			return (-1);
+	}
+	else
+		return (0);
+	return (i);
 }

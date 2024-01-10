@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   specific_sorting.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 18:47:16 by anjambon          #+#    #+#             */
+/*   Created: 2024/01/09 19:41:55 by anjambon          #+#    #+#             */
 /*   Updated: 2024/01/09 20:05:15 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_sort_three(t_stack **stack_a)
 {
-	t_stack	*stack_a;
-
-	stack_a = args_in_stack_a(argc, argv);
-	if (!stack_a)
-		return (0);
-	if (!(check_double_numbers(stack_a) == 0))
+	if (ft_min(*stack_a) == (*stack_a)->nb)
 	{
-		free_stack(&stack_a);
-		ft_error();
+		ft_rra(stack_a, 0);
+		ft_sa(stack_a, 0);
 	}
-	while (!ft_is_sorted(stack_a))
-		ft_sort(&stack_a);
-	while (stack_a)
+	else if (ft_max(*stack_a) == (*stack_a)->nb)
 	{
-		printf("  %ld\n  ", stack_a->nb);
-		stack_a = stack_a->next;
+		ft_ra(stack_a, 0);
+		if (!ft_is_sorted(*stack_a))
+			ft_sa(stack_a, 0);
 	}
-	free_stack(&stack_a);
-	return (0);
+	else
+	{
+		if (ft_find_index(*stack_a, ft_min(*stack_a)) == 1)
+			ft_sa(stack_a, 0);
+		else
+			ft_rra(stack_a, 0);
+	}
 }

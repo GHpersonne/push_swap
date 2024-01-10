@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/09 01:14:01 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/09 20:05:15 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,15 @@ void		free_stack(t_stack **stack_a);
 t_stack		*ft_real_lstlast(t_stack *lst);
 void		add_to_stack(t_stack **stack, int n);
 
-int			ft_is_sort(t_stack *stack_a);
+int			ft_is_sorted(t_stack *stack_a);
 int			ft_real_lstsize(t_stack *lst);
 long		ft_min(t_stack *stack);
 long		ft_max(t_stack *stack);
+
+int			ft_find_index(t_stack *stack_a, int nb);
+
+void		ft_sort(t_stack **stack_a);
+void		ft_sort_three(t_stack **stack_a);
 
 void		ft_pa(t_stack **a, t_stack **b, int j);
 void		ft_pb(t_stack **a, t_stack **b, int j);
