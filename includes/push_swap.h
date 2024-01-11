@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/11 19:14:08 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/12 00:47:15 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ int			rrarrbsb(t_stack *stack_a, t_stack *stack_b, int c);
 int			rrarbsb(t_stack *stack_a, t_stack *stack_b, int c);
 int			rarrbsb(t_stack *stack_a, t_stack *stack_b, int c);
 
-int			do_rarb(t_stack **stack_a, t_stack *stack_b, int c, char d);
-int			do_rrarrb(t_stack **stack_a, t_stack *stack_b, int c, char d);
-int			do_rrarb(t_stack **stack_a, t_stack *stack_b, int c, char d);
-int			do_rarrb(t_stack **stack_a, t_stack *stack_b, int c, char d);
+int			do_rarb(t_stack **stack_a, t_stack **stack_b, int c, char d);
+int			do_rrarrb(t_stack **stack_a, t_stack **stack_b, int c, char d);
+int			do_rrarb(t_stack **stack_a, t_stack **stack_b, int c, char d);
+int			do_rarrb(t_stack **stack_a, t_stack **stack_b, int c, char d);
 
 void		ft_sort(t_stack **stack_a);
 void		ft_sort_three(t_stack **stack_a);

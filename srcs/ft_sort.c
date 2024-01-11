@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:40 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/11 19:52:39 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/12 00:42:09 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	ft_sort_push_b(t_stack **stack_a, t_stack **stack_b)
 	while (i >= 0)
 	{
 		if (i == rarbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rarb(stack_a, *stack_b, tmp->nb, 'a');
+			i = do_rarb(stack_a, stack_b, tmp->nb, 'a');
 		else if (i == rrarrbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rrarrb(stack_a, *stack_b, tmp->nb, 'a');
+			i = do_rrarrb(stack_a, stack_b, tmp->nb, 'a');
 		else if (i == rarrbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rarrb(stack_a, *stack_b, tmp->nb, 'a');
+			i = do_rarrb(stack_a, stack_b, tmp->nb, 'a');
 		else if (i == rrarbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rrarb(stack_a, *stack_b, tmp->nb, 'a');
+			i = do_rrarb(stack_a, stack_b, tmp->nb, 'a');
 		else
 			tmp = tmp->next;
 	}
@@ -61,13 +61,13 @@ void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 		while (i >= 0)
 		{
 			if (i == ft_case_rarb_a(*stack_a, *stack_b, tmp->nb))
-				i = do_rarb(stack_a, *stack_b, tmp->nb, 'b');
+				i = do_rarb(stack_a, stack_b, tmp->nb, 'b');
 			else if (i == ft_case_rarrb_a(*stack_a, *stack_b, tmp->nb))
-				i = do_rarrb(stack_a, *stack_b, tmp->nb, 'b');
+				i = do_rarrb(stack_a, stack_b, tmp->nb, 'b');
 			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b, tmp->nb))
-				i = do_rrarrb(stack_a, *stack_b, tmp->nb, 'b');
+				i = do_rrarrb(stack_a, stack_b, tmp->nb, 'b');
 			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, tmp->nb))
-				i = do_rrarb(stack_a, *stack_b, tmp->nb, 'b');
+				i = do_rrarb(stack_a, stack_b, tmp->nb, 'b');
 			else
 				tmp = tmp->next;
 		}
