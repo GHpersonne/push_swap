@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:18 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/04 01:54:12 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:13:19 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,14 @@ void	ft_ra(t_stack **a, int i)
 	if (i == 0)
 		write(1, "ra\n", 3);
 }
+
+void	ft_rr(t_stack **a, t_stack **b, int j)
+{
+	if (!*b || !(*b)->next || !*a || !(*a)->next)
+		return ;
+	ft_ra(a, 1);
+	ft_rb(b, 1);
+	if (j == 0)
+		write(1, "rr\n", 4);
+}
+
