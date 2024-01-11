@@ -27,7 +27,7 @@ int	ft_is_sorted(t_stack *stack_a)
 	return (1);
 }
 
-int	circle_order_asc(t_stack *stack)
+int	check_circle_sort(t_stack *stack)
 {
 	int		i;
 	t_stack	*tmp;

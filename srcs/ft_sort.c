@@ -6,13 +6,13 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:40 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/10 00:42:52 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/11 01:54:02 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_pre_sort(t_stack **stack_a)
+void	ft_circle_sort(t_stack **stack_a)
 {
 	// index min dans la pile est plus proche du haut de la pile,
 	// alors le tri partiel avec ra.
@@ -39,37 +39,37 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 	while (i >= 0)
 	{
 		if (i == rarbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rarb(stack_a, stack_b, tmp->nb, 'a');
+			i = do_rarb(&stack_a, stack_b, tmp->nb, 'a');
 		else if (i == rrarrbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rrarrb(stack_a, stack_b, tmp->nb, 'a');
+			i = do_rrarrb(&stack_a, stack_b, tmp->nb, 'a');
 		else if (i == rarrbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rarrb(stack_a, stack_b, tmp->nb, 'a');
+			i = do_rarrb(&stack_a, stack_b, tmp->nb, 'a');
 		else if (i == rrarbsb(*stack_a, *stack_b, tmp->nb))
-			i = do_rrarb(stack_a, stack_b, tmp->nb, 'a');
+			i = do_rrarb(&stack_a, stack_b, tmp->nb, 'a');
 		else
 			tmp = tmp->next;
 	}
 }
 
-void	ft_sort_a(t_stack **a, t_stack **b)
+void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
 	t_stack	*tmp;
 
-	while (*b)
+	while (*stack_b)
 	{
-		tmp = *b;
-		i = cheapest_rotate_a(*a, *b);
+		tmp = *stack_b;
+		i = cheapest_rotate_a(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb_a(*a, *b, tmp->nb))
-				i = do_rarb(a, b, tmp->nb, 'b');
-			else if (i == ft_case_rarrb_a(*a, *b, tmp->nb))
-				i = do_rarrb(a, b, tmp->nb, 'b');
-			else if (i == ft_case_rrarrb_a(*a, *b, tmp->nb))
-				i = do_rrarrb(a, b, tmp->nb, 'b');
-			else if (i == ft_case_rrarb_a(*a, *b, tmp->nb))
-				i = do_rrarb(a, b, tmp->nb, 'b');
+			if (i == ft_case_rarb_a(*stack_a, *stack_b, tmp->nb))
+				i = do_rarb(&stack_a, stack_b, tmp->nb, 'b');
+			else if (i == ft_case_rarrb_a(*stack_a, *stack_b, tmp->nb))
+				i = do_rarrb(&stack_a, stack_b, tmp->nb, 'b');
+			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b, tmp->nb))
+				i = do_rrarrb(&stack_a, stack_b, tmp->nb, 'b');
+			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, tmp->nb))
+				i = do_rrarb(&stack_a, stack_b, tmp->nb, 'b');
 			else
 				tmp = tmp->next;
 		}
@@ -88,19 +88,19 @@ void	ft_sort(t_stack **stack_a)
 		ft_sort_three(stack_a);
 	else
 	{
-		if (circle_pre_sort_asc(stack_a) == ft_real_lstsize(stack_a))
-			ft_pre_sort(stack_a);
+		if (check_circle_sort(stack_a) == ft_real_lstsize(stack_a))
+			ft_circle_sort(stack_a);
 		else
 		{
-			ft_pb(stack_a, &stack_b, 0);
+			ft_pb(&stack_a, &stack_b, 0);
 			if (ft_real_lstsize(stack_a) > 3 && !ft_is_sorted(stack_a))
-				ft_pb(stack_a, &stack_b, 0);
+				ft_pb(&stack_a, &stack_b, 0);
 			while (ft_real_lstsize(stack_a) > 3 && !ft_is_sorted(stack_a))
-				ft_sort_b_till_3(stack_a, &stack_b);
+				ft_sort_b_till_3(&stack_a, &stack_b);
 			if (ft_real_lstsize(stack_a) == 3 && !ft_is_sorted(stack_a))
 				ft_sort_three(stack_a);
-			ft_sort_a(stack_a, &stack_b);
+			ft_sort_a(&stack_a, &stack_b);
 		}
 	}
-	ft_pre_sort(stack_a);
+	ft_circle_sort(stack_a);
 }
