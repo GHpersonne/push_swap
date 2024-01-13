@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/12 00:47:15 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/13 19:17:17 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-void		check_limits(long long int nb, t_stack **stack_a);
+void		check_limits(long long nb, t_stack **stack_a);
 void		check_digits(char *str, t_stack **stack_a);
 int			check_double_numbers(t_stack *stack_a);
 void		ft_error(void);

@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 23:30:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/07 21:33:17 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/13 19:17:40 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,18 @@ void	add_to_stack(t_stack **stack, int n)
 
 t_stack	*args_in_stack_a(int argc, char **argv)
 {
-	long long int	nb;
+	long long			nb;
 	t_stack			*stack_a;
 	int				i;
 
 	stack_a = 0;
 	i = 1;
+	nb = 0;
 	while (i < argc)
 	{
 		check_digits(argv[i], &stack_a);
 		nb = ft_atoi(argv[i]);
+		printf("%lld", nb);
 		check_limits(nb, &stack_a);
 		add_to_stack(&stack_a, nb);
 		i++;

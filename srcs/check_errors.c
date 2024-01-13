@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:56:00 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/08 17:44:52 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/13 19:18:05 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../Libft/libft.h"
 #include <limits.h>
 
-void	check_limits(long long int nb, t_stack **stack_a)
+void	check_limits(long long nb, t_stack **stack_a)
 {
 	if (nb > INT_MAX || nb < INT_MIN)
 	{

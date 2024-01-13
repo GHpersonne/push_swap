@@ -44,11 +44,11 @@ all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS) $(HEADERS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
-	@echo "$(BOLD)$(GREEN)Executable $(NAME) created successfully$(RESET)"
+	@echo "$(BOLD)$(GREEN)✅ Executable $(NAME) created successfully$(RESET)"
 
 $(LIBFT):
 	@make bonus -C ./Libft -s
-	@echo "$(BOLD)$(GREEN)Libft library created successfully$(RESET)"
+	@echo "$(BOLD)$(GREEN)✅ Libft library created successfully$(RESET)"
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p .obj
@@ -59,11 +59,11 @@ re: fclean all
 
 fclean: clean
 	@rm -f $(NAME) $(LIBFT)
-	@echo "$(BOLD)$(RED)Removed $(NAME) and libft.a$(RESET)"
+	@echo "$(BOLD)$(RED)❌ Removed $(NAME) and libft.a$(RESET)"
 
 clean:
 	@rm -rf $(OBJ_DIR)
 	@make clean -C ./Libft -s
-	@echo "$(BOLD)$(RED)Removed $(OBJ_DIR)$(RESET)"
+	@echo "$(BOLD)$(RED)❌ Removed $(OBJ_DIR)$(RESET)"
 
 .PHONY: all clean fclean re $(LIBFT)
