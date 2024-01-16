@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/16 01:24:52 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/16 01:30:56 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ int	main(int argc, char **argv)
 	}
 	while (!ft_is_sorted(stack_a))
 		ft_sort(&stack_a);
-	while (stack_a)
-	{
-		printf("  %ld\n  ", stack_a->nb);
-		stack_a = stack_a->next;
-	}
 	free_stack(&stack_a);
 	return (0);
 }
