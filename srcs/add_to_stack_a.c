@@ -6,39 +6,12 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 23:30:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/14 15:16:27 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/16 01:26:26 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 #include "../Libft/libft.h"
-
-/* long long	ft_atoi_test(const char *str)
-{
-	long long		res;
-	unsigned long	i;
-	int				sign;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
-			sign = -1;
-	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
-	{
- 		if (res != (res * 10 + str[i] - '0') / 10)
-		{
-			if (sign == -1)
-				return (LONG_MIN);
-			return (LONG_MAX);
-		}
-		res = (res * 10) + (str[i++] - '0');
-	}
-	return (res * sign);
-} */
 
 t_stack	*ft_real_lstlast(t_stack *lst)
 {
@@ -68,9 +41,9 @@ void	add_to_stack(t_stack **stack, int n)
 
 t_stack	*args_in_stack_a(int argc, char **argv)
 {
-	long long			nb;
-	t_stack			*stack_a;
-	int				i;
+	long long	nb;
+	t_stack		*stack_a;
+	int			i;
 
 	stack_a = 0;
 	i = 1;

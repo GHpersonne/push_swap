@@ -6,11 +6,11 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 01:04:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/10 01:06:24 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/16 01:25:56 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	cheapest_rotate_b(t_stack *stack_a, t_stack *stack_b)
 {

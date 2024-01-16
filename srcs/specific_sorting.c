@@ -6,11 +6,11 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:41:55 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/09 20:05:15 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/16 01:23:48 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	ft_sort_three(t_stack **stack_a)
 {

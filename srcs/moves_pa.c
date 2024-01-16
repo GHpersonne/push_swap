@@ -6,11 +6,11 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:47:28 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/11 17:08:26 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/16 01:25:00 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	ft_case_rarb_a(t_stack *stack_a, t_stack *stack_b, int j)
 {
