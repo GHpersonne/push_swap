@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                       :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aniambon <aniambon@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 00:36:14 by aniambon          #+#    #+#             */
-/*   Updated: 2024/01/08 00:36:56 by aniambon         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:35:09 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	ft_is_sorted(t_stack *stack_a)
 {
@@ -41,7 +42,7 @@ int	check_circle_sort(t_stack *stack)
 			i++;
 		}
 		i++;
-		tmp = stack;
+		tmp = stack->next;
 		while (stack->next)
 		{
 			stack = stack->next;

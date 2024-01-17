@@ -6,11 +6,12 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:56:00 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/16 01:25:51 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:35:09 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 #include "../Libft/libft.h"
 #include <limits.h>
 
