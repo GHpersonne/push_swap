@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 01:04:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/16 01:25:56 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/17 01:39:58 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ int	cheapest_rotate_a(t_stack *stack_a, t_stack *stack_b)
 	t_stack	*tmp;
 
 	tmp = stack_b;
-	i = ft_case_rrarrb_a(stack_a, stack_b, tmp->nb);
+	i = rrarrb_for_a(stack_a, stack_b, tmp->nb);
 	while (tmp)
 	{
-		if (i > ft_case_rarb_a(stack_a, stack_b, tmp->nb))
-			i = ft_case_rarb_a(stack_a, stack_b, tmp->nb);
-		if (i > ft_case_rrarrb_a(stack_a, stack_b, tmp->nb))
-			i = ft_case_rrarrb_a(stack_a, stack_b, tmp->nb);
-		if (i > ft_case_rarrb_a(stack_a, stack_b, tmp->nb))
-			i = ft_case_rarrb_a(stack_a, stack_b, tmp->nb);
-		if (i > ft_case_rrarb_a(stack_a, stack_b, tmp->nb))
-			i = ft_case_rrarb_a(stack_a, stack_b, tmp->nb);
+		if (i > rarb_for_a(stack_a, stack_b, tmp->nb))
+			i = rarb_for_a(stack_a, stack_b, tmp->nb);
+		if (i > rrarrb_for_a(stack_a, stack_b, tmp->nb))
+			i = rrarrb_for_a(stack_a, stack_b, tmp->nb);
+		if (i > rarrb_for_a(stack_a, stack_b, tmp->nb))
+			i = rarrb_for_a(stack_a, stack_b, tmp->nb);
+		if (i > rrarb_for_a(stack_a, stack_b, tmp->nb))
+			i = rrarb_for_a(stack_a, stack_b, tmp->nb);
 		tmp = tmp->next;
 	}
 	return (i);

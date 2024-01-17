@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:40 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/16 01:25:13 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/17 01:39:58 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 		i = cheapest_rotate_a(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb_a(*stack_a, *stack_b, tmp->nb))
+			if (i == rarb_for_a(*stack_a, *stack_b, tmp->nb))
 				i = do_rarb(stack_a, stack_b, tmp->nb, 'b');
-			else if (i == ft_case_rarrb_a(*stack_a, *stack_b, tmp->nb))
+			else if (i == rarrb_for_a(*stack_a, *stack_b, tmp->nb))
 				i = do_rarrb(stack_a, stack_b, tmp->nb, 'b');
-			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b, tmp->nb))
+			else if (i == rrarrb_for_a(*stack_a, *stack_b, tmp->nb))
 				i = do_rrarrb(stack_a, stack_b, tmp->nb, 'b');
-			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, tmp->nb))
+			else if (i == rrarb_for_a(*stack_a, *stack_b, tmp->nb))
 				i = do_rrarb(stack_a, stack_b, tmp->nb, 'b');
 			else
 				tmp = tmp->next;

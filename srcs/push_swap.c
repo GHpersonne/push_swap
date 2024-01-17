@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/16 01:30:56 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/17 00:44:18 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	main(int argc, char **argv)
 	stack_a = args_in_stack_a(argc, argv);
 	if (!stack_a)
 		return (0);
-	if (!(check_double_numbers(stack_a) == 0))
+	if (check_double_numbers(stack_a))
 	{
 		free_stack(&stack_a);
 		ft_error();
 	}
-	while (!ft_is_sorted(stack_a))
+	if (!ft_is_sorted(stack_a))
 		ft_sort(&stack_a);
 	free_stack(&stack_a);
 	return (0);

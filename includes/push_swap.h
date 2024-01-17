@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/13 19:17:17 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/17 01:43:14 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ long		ft_max(t_stack *stack);
 int			check_circle_sort(t_stack *stack);
 
 int			ft_find_index(t_stack *stack_a, int nb);
-int			ft_push_index_a(t_stack *stack, int nb);
-int			ft_push_index_b(t_stack *stack, int nb);
+int			index_a(t_stack *stack, int nb);
+int			index_b(t_stack *stack, int nb);
 
 int			cheapest_rotate_a(t_stack *stack_a, t_stack *stack_b);
-int			ft_case_rarb_a(t_stack *stack_a, t_stack *stack_b, int j);
-int			ft_case_rrarrb_a(t_stack *stack_a, t_stack *stack_b, int j);
-int			ft_case_rarrb_a(t_stack *stack_a, t_stack *stack_b, int j);
-int			ft_case_rrarb_a(t_stack *stack_a, t_stack *stack_b, int j);
+int			rarb_for_a(t_stack *stack_a, t_stack *stack_b, int j);
+int			rrarrb_for_a(t_stack *stack_a, t_stack *stack_b, int j);
+int			rarrb_for_a(t_stack *stack_a, t_stack *stack_b, int j);
+int			rrarb_for_a(t_stack *stack_a, t_stack *stack_b, int j);
 
 int			cheapest_rotate_b(t_stack *stack_a, t_stack *stack_b);
 int			rarbsb(t_stack *stack_a, t_stack *stack_b, int c);

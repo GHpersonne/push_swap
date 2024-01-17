@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:43:09 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/16 01:25:06 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/17 01:43:14 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_find_index(t_stack *stack_a, int nb)
 	return (i);
 }
 
-int	ft_push_index_a(t_stack *stack, int nb)
+int	index_a(t_stack *stack, int nb)
 {
 	int		i;
 
@@ -45,7 +45,7 @@ int	ft_push_index_a(t_stack *stack, int nb)
 	return (i);
 }
 
-int	ft_push_index_b(t_stack *stack, int nb)
+int	index_b(t_stack *stack, int nb)
 {
 	int		i;
 
