@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:18 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/18 20:35:07 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/18 20:53:24 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	ft_ra(t_stack **a, t_stack **b, int i)
 	if (i == 0)
 		if (write(1, "ra\n", 3) == -1)
 			free_double_stack(a, b);
-}
+}  */
 
-void	ft_rr(t_stack **a, t_stack **b, int i)
+/* void	ft_rr(t_stack **a, t_stack **b, int i)
 {
 	if (!*b || !(*b)->next || !*a || !(*a)->next)
 		return ;
@@ -57,7 +57,7 @@ void	ft_rr(t_stack **a, t_stack **b, int i)
 			free_double_stack(a, b);
 } */
 
-void	ft_ra(t_stack **a, t_stack **b, int j)
+void	ft_ra(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*tmp;
 
@@ -68,12 +68,12 @@ void	ft_ra(t_stack **a, t_stack **b, int j)
 	(*a)->next = tmp;
 	*a = tmp->next;
 	tmp->next = 0;
-	if (j == 0)
+	if (i == 0)
 		if (write(1, "ra\n", 3) == -1)
 			free_double_stack(a, b);
 }
 
-void	ft_rb(t_stack **a, t_stack **b, int j)
+void	ft_rb(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*tmp;
 
@@ -84,12 +84,12 @@ void	ft_rb(t_stack **a, t_stack **b, int j)
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = 0;
-	if (j == 0)
+	if (i == 0)
 		if (write(1, "rb\n", 3) == -1)
 			free_double_stack(a, b);
 }
 
-void	ft_rr(t_stack **a, t_stack **b, int j)
+void	ft_rr(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*tmp;
 
@@ -105,7 +105,7 @@ void	ft_rr(t_stack **a, t_stack **b, int j)
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = 0;
-	if (j == 0)
+	if (i == 0)
 		if (write(1, "rr\n", 3) == -1)
 			free_double_stack(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:40 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/18 18:07:33 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/18 21:09:20 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_sort_push_b(t_stack **stack_a, t_stack **stack_b)
 
 	tmp = *stack_a;
 	i = cheapest_rotate_b(*stack_a, *stack_b);
-	printf("");
 	while (i >= 0)
 	{
 		if (i == rarbsb(*stack_a, *stack_b, tmp->nb))
@@ -94,7 +93,7 @@ void	ft_sort(t_stack **stack_a)
 			ft_pb(stack_a, &stack_b, 0);
 			if (ft_real_lstsize(*stack_a) > 3 && !ft_is_sorted(*stack_a))
 				ft_pb(stack_a, &stack_b, 0);
-			while (ft_real_lstsize(*stack_a) > 3)
+			while (ft_real_lstsize(*stack_a) > 3 && !ft_is_sorted(*stack_a))
 				ft_sort_push_b(stack_a, &stack_b);
 			if (ft_real_lstsize(*stack_a) == 3 && !ft_is_sorted(*stack_a))
 				ft_sort_three(stack_a, &stack_b);

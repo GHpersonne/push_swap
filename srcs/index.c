@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:43:09 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/18 11:11:42 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/18 21:14:04 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_find_index(t_stack *stack_a, int nb)
 	i = 0;
 	while (stack_a->nb != nb)
 	{
-		i++;
 		stack_a = stack_a->next;
+		i++;
 	}
 	return (i);
 }
