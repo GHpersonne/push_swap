@@ -6,25 +6,25 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:40 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/17 15:35:09 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:07:33 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-void	ft_circle_sort(t_stack **stack_a)
+void	ft_circle_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_real_lstsize(*stack_a) / 2 > ft_find_index(*stack_a, \
 		ft_min(*stack_a)))
 	{
 		while (ft_find_index(*stack_a, ft_min(*stack_a)))
-			ft_ra(stack_a, 0);
+			ft_ra(stack_a, stack_b, 0);
 	}
 	else
 	{
 		while (ft_find_index(*stack_a, ft_min(*stack_a)))
-			ft_rra(stack_a, 0);
+			ft_rra(stack_a, stack_b, 0);
 	}
 }
 
@@ -35,6 +35,7 @@ void	ft_sort_push_b(t_stack **stack_a, t_stack **stack_b)
 
 	tmp = *stack_a;
 	i = cheapest_rotate_b(*stack_a, *stack_b);
+	printf("");
 	while (i >= 0)
 	{
 		if (i == rarbsb(*stack_a, *stack_b, tmp->nb))
@@ -81,24 +82,24 @@ void	ft_sort(t_stack **stack_a)
 
 	stack_b = 0;
 	if (ft_real_lstsize(*stack_a) == 2)
-		ft_sa(stack_a, 0);
+		ft_sa(stack_a, &stack_b, 0);
 	else if (ft_real_lstsize(*stack_a) == 3)
-		ft_sort_three(stack_a);
+		ft_sort_three(stack_a, &stack_b);
 	else
 	{
 		if (check_circle_sort(*stack_a) == ft_real_lstsize(*stack_a))
-			ft_circle_sort(stack_a);
+			ft_circle_sort(stack_a, &stack_b);
 		else
 		{
 			ft_pb(stack_a, &stack_b, 0);
 			if (ft_real_lstsize(*stack_a) > 3 && !ft_is_sorted(*stack_a))
 				ft_pb(stack_a, &stack_b, 0);
-			while (ft_real_lstsize(*stack_a) > 3 && !ft_is_sorted(*stack_a))
+			while (ft_real_lstsize(*stack_a) > 3)
 				ft_sort_push_b(stack_a, &stack_b);
 			if (ft_real_lstsize(*stack_a) == 3 && !ft_is_sorted(*stack_a))
-				ft_sort_three(stack_a);
+				ft_sort_three(stack_a, &stack_b);
 			ft_sort_a(stack_a, &stack_b);
 		}
 	}
-	ft_circle_sort(stack_a);
+	ft_circle_sort(stack_a, &stack_b);
 }

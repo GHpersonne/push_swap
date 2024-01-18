@@ -6,14 +6,13 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:19 by aniambon          #+#    #+#             */
-/*   Updated: 2024/01/17 15:39:07 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:02:25 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void	ft_sa(t_stack **a, int i)
+void	ft_sa(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*tmp;
 
@@ -24,10 +23,11 @@ void	ft_sa(t_stack **a, int i)
 	tmp->next = (*a)->next;
 	(*a)->next = tmp;
 	if (i == 0)
-		write(1, "sa\n", 3);
+		if (write(1, "sa\n", 3) == -1)
+			free_double_stack(a, b);
 }
 
-void	ft_sb(t_stack **b, int i)
+void	ft_sb(t_stack **a, t_stack **b, int i)
 {
 	t_stack	*tmp;
 
@@ -38,7 +38,8 @@ void	ft_sb(t_stack **b, int i)
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
 	if (i == 0)
-		write(1, "sb\n", 3);
+		if (write(1, "sb\n", 3) == -1)
+			free_double_stack(a, b);
 }
 
 void	ft_ss(t_stack **a, t_stack **b, int i)
@@ -56,5 +57,6 @@ void	ft_ss(t_stack **a, t_stack **b, int i)
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
 	if (i == 0)
-		write(1, "ss\n", 3);
+		if (write(1, "ss\n", 3) == -1)
+			free_double_stack(a, b);
 }
