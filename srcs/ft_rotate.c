@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:18 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/18 20:53:24 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 00:46:13 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,32 @@ void	ft_ra(t_stack **a, t_stack **b, int i)
 			free_double_stack(a, b);
 } */
 
+static void rotate(t_stack **stack)
+{
+    t_stack *first;
+    t_stack *second;
+
+    if (NULL == stack || NULL == *stack || (*stack)->next == NULL)
+        return;
+
+    first = *stack;
+    second = (*stack)->next;
+
+    // Trouver le dernier élément
+    while (first->next != NULL)
+    {
+        first = first->next;
+    }
+
+    // Effectuer la rotation
+    first->next = *stack;
+    *stack = second;
+    first->next->next = NULL;
+}
+
 void	ft_ra(t_stack **a, t_stack **b, int i)
 {
-	t_stack	*tmp;
-
-	if (!*a || !(*a)->next)
-		return ;
-	tmp = *a;
-	*a = ft_real_lstlast(*a);
-	(*a)->next = tmp;
-	*a = tmp->next;
-	tmp->next = 0;
+	rotate(a);
 	if (i == 0)
 		if (write(1, "ra\n", 3) == -1)
 			free_double_stack(a, b);
@@ -75,15 +90,7 @@ void	ft_ra(t_stack **a, t_stack **b, int i)
 
 void	ft_rb(t_stack **a, t_stack **b, int i)
 {
-	t_stack	*tmp;
-
-	if (!*b || !(*b)->next)
-		return ;
-	tmp = *b;
-	*b = ft_real_lstlast(*b);
-	(*b)->next = tmp;
-	*b = tmp->next;
-	tmp->next = 0;
+	rotate(b);
 	if (i == 0)
 		if (write(1, "rb\n", 3) == -1)
 			free_double_stack(a, b);
@@ -91,20 +98,8 @@ void	ft_rb(t_stack **a, t_stack **b, int i)
 
 void	ft_rr(t_stack **a, t_stack **b, int i)
 {
-	t_stack	*tmp;
-
-	if (!*a || !((*a)->next) || !*b || !((*b)->next))
-		return ;
-	tmp = *a;
-	*a = ft_real_lstlast(*a);
-	(*a)->next = tmp;
-	*a = tmp->next;
-	tmp->next = 0;
-	tmp = *b;
-	*b = ft_real_lstlast(*b);
-	(*b)->next = tmp;
-	*b = tmp->next;
-	tmp->next = 0;
+	rotate(a);
+	rotate(b);
 	if (i == 0)
 		if (write(1, "rr\n", 3) == -1)
 			free_double_stack(a, b);

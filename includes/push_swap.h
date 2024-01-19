@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/18 20:52:40 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 00:50:55 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,22 +62,22 @@ int			do_rrarb(t_stack **stack_a, t_stack **stack_b, int c, char d);
 int			do_rarrb(t_stack **stack_a, t_stack **stack_b, int c, char d);
 
 void		ft_sort(t_stack **stack_a);
-void		ft_sort_three(t_stack **stack_a,t_stack **stack_b);
-void		ft_circle_sort(t_stack **stack_a, t_stack **stack_b);
+void		ft_sort_three(t_stack **stack_a);
+void		ft_circle_sort(t_stack **stack_a);
 
-void		ft_pa(t_stack **a, t_stack **b, int i);
-void		ft_pb(t_stack **a, t_stack **b, int i);
+void		ft_pa(t_stack **a, t_stack **b, int j);
+void		ft_pb(t_stack **a, t_stack **b, int j);
 
-void		ft_sa(t_stack **a, t_stack **b, int i);
-void		ft_sb(t_stack **a, t_stack **b, int i);
-void		ft_ss(t_stack **a, t_stack **b, int i);
+void		ft_sa(t_stack **a, int j);
+void		ft_sb(t_stack **a, int j);
+void		ft_ss(t_stack **a, t_stack **b, int j);
 
-void		ft_ra(t_stack **a, t_stack **b, int i);
-void		ft_rb(t_stack **a, t_stack **b, int i);
-void		ft_rr(t_stack **a, t_stack **b, int i);
+void		ft_ra(t_stack **a, int j);
+void		ft_rb(t_stack **a, int j);
+void		ft_rr(t_stack **a, t_stack **b, int j);
 
-void		ft_rra(t_stack **a, t_stack **b, int i);
-void		ft_rrb(t_stack **a, t_stack **b, int i);
-void		ft_rrr(t_stack **a, t_stack **b, int i);
+void		ft_rra(t_stack **a, int j);
+void		ft_rrb(t_stack **a, int j);
+void		ft_rrr(t_stack **a, t_stack **b, int j);
 
 #endif
