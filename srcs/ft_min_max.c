@@ -6,14 +6,14 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:43:54 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/17 15:35:09 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:41:26 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-int	ft_real_lstsize(t_stack *lst)
+int	ft_stack_size(t_stack *lst)
 {
 	size_t	i;
 

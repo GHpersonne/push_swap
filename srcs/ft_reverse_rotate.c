@@ -6,167 +6,48 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/18 21:15:01 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:06:43 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void	ft_rrr(t_stack **a, t_stack **b, int j)
+static void	rev_rotate(t_stack **stack)
 {
-	if (!*b || !(*b)->next || !*a || !(*a)->next)
+	t_stack	*first;
+	t_stack	*last;
+	t_stack	*second_last;
+
+	if (NULL == stack || NULL == *stack || (*stack)->next == NULL)
 		return ;
-	ft_rra(a, b, 1);
-	ft_rrb(a, b, 1);
-	if (j == 0)
-		if (write(1, "rrr\n", 3) == -1)
-			free_double_stack(a, b);
+	first = *stack;
+	last = ft_laststack(*stack);
+	second_last = *stack;
+	while (second_last->next != last)
+		second_last = second_last->next;
+	second_last->next = NULL;
+	last->next = first;
+	*stack = last;
 }
 
-void	ft_rrb(t_stack **a, t_stack **b, int j)
+void	ft_rra(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
-	int		i;
-
-	if (!*b || !(*b)->next)
-		return ;
-	i = 0;
-	tmp = *b;
-	while ((*b)->next)
-	{
-		i++;
-		*b = (*b)->next;
-	}
-	(*b)->next = tmp;
-	while (i-- > 1)
-		tmp = tmp->next;
-	tmp->next = 0;
-	if (j == 0)
-		if (write(1, "rrb\n", 3) == -1)
-			free_double_stack(a, b);
+	rev_rotate(a);
+	if (write(1, "rra\n", 4) == -1)
+		free_double_stack(a, b);
 }
 
-void	ft_rra(t_stack **a, t_stack **b, int j)
+void	ft_rrb(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
-	int		i;
-
-	if (!*a || !(*a)->next)
-		return ;
-	i = 0;
-	tmp = *a;
-	while ((*a)->next)
-	{
-		*a = (*a)->next;
-		i++;
-	}
-	(*a)->next = tmp;
-	while (i > 1)
-	{
-		tmp = tmp->next;
-		i--;
-	}
-	tmp->next = 0;
-	if (j == 0)
-		if (write(1, "rra\n", 3) == -1)
-			free_double_stack(a, b);
-} */
-
-void	ft_rrr_cont(t_stack **b, int i)
-{
-	t_stack	*tmp;
-	int		j;
-
-	j = 0;
-	tmp = *b;
-	while ((*b)->next)
-	{
-		j++;
-		*b = (*b)->next;
-	}
-	(*b)->next = tmp;
-	while (j > 1)
-	{
-		tmp = tmp->next;
-		j--;
-	}
-	tmp->next = 0;
-	if (i == 0)
-		write(1, "rrr\n", 4);
+	rev_rotate(b);
+	if (write(1, "rrb\n", 4) == -1)
+		free_double_stack(a, b);
 }
 
-void	ft_rrr(t_stack **a, t_stack **b, int i)
+void	ft_rrr(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
-	int		j;
-
-	if (!*a || !((*a)->next) || !*b || !((*b)->next))
-		return ;
-	j = 0;
-	tmp = *a;
-	while ((*a)->next)
-	{
-		j++;
-		*a = (*a)->next;
-	}
-	(*a)->next = tmp;
-	while (j > 1)
-	{
-		tmp = tmp->next;
-		j--;
-	}
-	tmp->next = 0;
-	ft_rrr_cont(b, i);
-}
-
-void	ft_rrb(t_stack **a, t_stack **b, int i)
-{
-	t_stack	*tmp;
-	int		j;
-
-	if (!*b || !(*b)->next)
-		return ;
-	j = 0;
-	tmp = *b;
-	while ((*b)->next)
-	{
-		j++;
-		*b = (*b)->next;
-	}
-	(*b)->next = tmp;
-	while (j > 1)
-	{
-		tmp = tmp->next;
-		j--;
-	}
-	tmp->next = 0;
-	if (i == 0)
-		if (write(1, "rrb\n", 4) == -1)
-			free_double_stack(a, b);
-}
-
-void	ft_rra(t_stack **a, t_stack **b, int i)
-{
-	t_stack	*tmp;
-	int		j;
-
-	if (!*a || !(*a)->next)
-		return ;
-	j = 0;
-	tmp = *a;
-	while ((*a)->next)
-	{
-		*a = (*a)->next;
-		j++;
-	}
-	(*a)->next = tmp;
-	while (j > 1)
-	{
-		tmp = tmp->next;
-		j--;
-	}
-	tmp->next = 0;
-	if (i == 0)
-		if (write(1, "rra\n", 4) == -1)
-			free_double_stack(a, b);
+	rev_rotate(a);
+	rev_rotate(b);
+	if (write(1, "rrr\n", 4) == -1)
+		free_double_stack(a, b);
 }
