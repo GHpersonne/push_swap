@@ -6,13 +6,13 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:41:55 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 17:12:22 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 22:02:16 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
+/* void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_min(*stack_a) == (*stack_a)->nb)
 	{
@@ -32,4 +32,16 @@ void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
 		else
 			ft_rra(stack_a, stack_b);
 	}
+} */
+
+void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
+{
+	if ((*stack_a)->nb > (*stack_a)->next->next->nb)
+		ft_rra(stack_a, stack_b);
+	if ((*stack_a)->nb > (*stack_a)->next->nb)
+		ft_ra(stack_a, stack_b);
+	else if ((*stack_a)->nb > (*stack_a)->next->nb)
+		ft_rra(stack_a, stack_b);
+	if ((*stack_a)->nb > (*stack_a)->next->nb)
+		ft_sa(stack_a);
 }
