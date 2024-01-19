@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 17:36:55 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:47:30 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ t_stack		*ft_laststack(t_stack *stack);
 void		add_to_stack(t_stack **stack, int n);
 
 int			ft_is_sorted(t_stack *stack_a);
+int			check_circle_sort(t_stack *stack);
 int			ft_stack_size(t_stack *stack);
 long		ft_min(t_stack *stack);
 long		ft_max(t_stack *stack);
-int			check_circle_sort(t_stack *stack);
 
 int			ft_find_index(t_stack *stack_a, int nb);
 int			index_a(t_stack *stack, int nb);
