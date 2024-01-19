@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 00:36:14 by aniambon          #+#    #+#             */
-/*   Updated: 2024/01/17 15:35:09 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:41:35 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_is_sorted(t_stack *stack_a)
 int	check_circle_sort(t_stack *stack)
 {
 	int		i;
-	t_stack	*tmp;
 
 	i = 0;
 	if (stack && stack->next)
@@ -42,14 +41,13 @@ int	check_circle_sort(t_stack *stack)
 			i++;
 		}
 		i++;
-		tmp = stack->next;
-		while (stack->next)
+		stack = stack->next;
+		while (stack && stack->next && stack->nb < stack->next->nb)
 		{
 			stack = stack->next;
 			i++;
 		}
-		if (stack != tmp)
-			return (-1);
+		i++;
 	}
 	else
 		return (0);

@@ -6,20 +6,20 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 23:30:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 16:20:01 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:37:10 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "../Libft/libft.h"
 
-t_stack	*ft_laststack(t_stack *lst)
+t_stack	*ft_laststack(t_stack *stack)
 {
-	if (!lst)
+	if (!stack)
 		return (0);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
 void	add_to_stack(t_stack **stack, int n)

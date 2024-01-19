@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 17:07:50 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:36:55 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void		ft_error(void);
 t_stack		*args_in_stack_a(int argc, char **argv);
 void		free_stack(t_stack **stack_a);
 void		free_double_stack(t_stack **stack_a, t_stack **stack_b);
-t_stack		*ft_laststack(t_stack *lst);
+t_stack		*ft_laststack(t_stack *stack);
 void		add_to_stack(t_stack **stack, int n);
 
 int			ft_is_sorted(t_stack *stack_a);
-int			ft_stack_size(t_stack *lst);
+int			ft_stack_size(t_stack *stack);
 long		ft_min(t_stack *stack);
 long		ft_max(t_stack *stack);
 int			check_circle_sort(t_stack *stack);

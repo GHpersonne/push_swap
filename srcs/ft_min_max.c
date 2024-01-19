@@ -6,21 +6,21 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:43:54 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 16:41:26 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:36:19 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-int	ft_stack_size(t_stack *lst)
+int	ft_stack_size(t_stack *stack)
 {
 	size_t	i;
 
 	i = 0;
-	while (lst)
+	while (stack)
 	{
-		lst = lst->next;
+		stack = stack->next;
 		i++;
 	}
 	return (i);
