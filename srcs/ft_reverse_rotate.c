@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:16 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 17:06:43 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:22:08 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	rev_rotate(t_stack **stack)
 	t_stack	*last;
 	t_stack	*second_last;
 
-	if (NULL == stack || NULL == *stack || (*stack)->next == NULL)
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
 	first = *stack;
 	last = ft_laststack(*stack);

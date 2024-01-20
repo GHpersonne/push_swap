@@ -6,41 +6,18 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:41:55 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 22:02:16 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:43:23 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
-{
-	if (ft_min(*stack_a) == (*stack_a)->nb)
-	{
-		ft_rra(stack_a, stack_b);
-		ft_sa(stack_a);
-	}
-	else if (ft_max(*stack_a) == (*stack_a)->nb)
-	{
-		ft_ra(stack_a, stack_b);
-		if (!ft_is_sorted(*stack_a))
-			ft_sa(stack_a);
-	}
-	else
-	{
-		if (ft_find_index(*stack_a, ft_min(*stack_a)) == 1)
-			ft_sa(stack_a);
-		else
-			ft_rra(stack_a, stack_b);
-	}
-} */
-
 void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
 {
-	if ((*stack_a)->nb > (*stack_a)->next->next->nb)
-		ft_rra(stack_a, stack_b);
-	if ((*stack_a)->nb > (*stack_a)->next->nb)
+	if (((*stack_a)->nb > (*stack_a)->next->next->nb) && \
+		(*stack_a)->nb > (*stack_a)->next->nb)
 		ft_ra(stack_a, stack_b);
-	else if ((*stack_a)->nb > (*stack_a)->next->nb)
+	else if ((*stack_a)->next->nb > (*stack_a)->next->next->nb)
 		ft_rra(stack_a, stack_b);
 	if ((*stack_a)->nb > (*stack_a)->next->nb)
 		ft_sa(stack_a);
