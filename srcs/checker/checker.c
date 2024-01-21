@@ -6,12 +6,13 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:40:24 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/21 16:46:02 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 00:03:48 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "../Libft/libft.h"
+#include "../../Libft/get_next_line_bonus.h"
+#include "../../Libft/libft.h"
 
 int	ft_cmp(t_stack **stack_a, t_stack **stack_b, char *line)
 {

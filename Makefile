@@ -32,41 +32,40 @@ SRC_FILES = push_swap.c \
 			cheapest_move.c \
 			rotate_and_push.c
 
-#SRC_FILES_BONUS = checker.c
+SRC_FILES_BONUS = checker/checker.c
 
-INC_FILES = push_swap.h \
+INC_FILES = push_swap.h
 
-OBJ_FILES = $(SRC_FILES:.c=.o)
-
-SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
-OBJS = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
+OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+OBJ_FILES_BONUS = $(OBJ_DIR)/checker/checker.o
 HEADERS = $(addprefix $(INCLUDES_DIR)/, $(INC_FILES))
-#SRCS_BONUS = $(addprefix $(SRC_DIR)/, $(SRC_FILES_BONUS))
-#OBJS_BONUS = $(addprefix $(OBJ_DIR)/, $(SRC_FILES_BONUS:.c=.o))
 
-all: $(LIBFT) $(NAME) #checker
+all: $(LIBFT) $(NAME)
 
-$(NAME): $(OBJS) $(HEADERS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+$(NAME): $(OBJ_FILES) $(HEADERS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_FILES) $(LIBFT)
 	@echo "$(BOLD)$(GREEN)✅ Executable $(NAME) created successfully$(RESET)"
 
 $(LIBFT):
 	@make bonus -C ./Libft -s
 	@echo "$(BOLD)$(GREEN)✅ Libft library created successfully$(RESET)"
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADERS)
-	@mkdir -p .obj
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADERS) | $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
 	@echo "$(ITALIC)$(BLUE)Compiled $< successfully$(RESET)"
 
-#bonus: $(OBJS_BONUS) $(HEADERS)
-#	@$(CC) $(CFLAGS) -o checker $(OBJS_BONUS) $(LIBFT)
-#	@echo "$(BOLD)$(GREEN)✅ Executable checker created successfully$(RESET)"
+$(OBJ_DIR)/checker/%.o: $(SRC_DIR)/checker/%.c $(HEADERS) | $(OBJ_DIR)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
+	@echo "$(ITALIC)$(BLUE)Compiled $< successfully$(RESET)"
 
-#$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADERS)
-#	@mkdir -p .obj
-#	@$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
-#	@echo "$(ITALIC)$(BLUE)Compiled $< successfully$(RESET)"
+bonus: $(OBJ_FILES_BONUS) $(HEADERS) $(LIBFT)
+	@$(CC) $(CFLAGS) -o checker $(OBJ_FILES_BONUS) $(LIBFT)
+	@echo "$(BOLD)$(GREEN)✅ Executable checker created successfully$(RESET)"
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 re: fclean all
 
