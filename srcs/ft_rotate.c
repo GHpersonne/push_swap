@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:18 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 17:08:33 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/21 16:52:45 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	ft_ra(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	if (write(1, "ra\n", 3) == -1)
-		free_double_stack(a, b);
+		free_double_stack(a, b, 1);
 }
 
 void	ft_rb(t_stack **a, t_stack **b)
 {
 	rotate(b);
 	if (write(1, "rb\n", 3) == -1)
-		free_double_stack(a, b);
+		free_double_stack(a, b, 1);
 }
 
 void	ft_rr(t_stack **a, t_stack **b)
@@ -47,6 +47,6 @@ void	ft_rr(t_stack **a, t_stack **b)
 	rotate(a);
 	rotate(b);
 	if (write(1, "rr\n", 3) == -1)
-		free_double_stack(a, b);
+		free_double_stack(a, b, 1);
 }
 

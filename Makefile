@@ -32,6 +32,8 @@ SRC_FILES = push_swap.c \
 			cheapest_move.c \
 			rotate_and_push.c
 
+#SRC_FILES_BONUS = checker.c
+
 INC_FILES = push_swap.h \
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
@@ -39,8 +41,10 @@ OBJ_FILES = $(SRC_FILES:.c=.o)
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 HEADERS = $(addprefix $(INCLUDES_DIR)/, $(INC_FILES))
+#SRCS_BONUS = $(addprefix $(SRC_DIR)/, $(SRC_FILES_BONUS))
+#OBJS_BONUS = $(addprefix $(OBJ_DIR)/, $(SRC_FILES_BONUS:.c=.o))
 
-all: $(LIBFT) $(NAME)
+all: $(LIBFT) $(NAME) #checker
 
 $(NAME): $(OBJS) $(HEADERS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
@@ -55,10 +59,19 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADERS)
 	@$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
 	@echo "$(ITALIC)$(BLUE)Compiled $< successfully$(RESET)"
 
+#bonus: $(OBJS_BONUS) $(HEADERS)
+#	@$(CC) $(CFLAGS) -o checker $(OBJS_BONUS) $(LIBFT)
+#	@echo "$(BOLD)$(GREEN)✅ Executable checker created successfully$(RESET)"
+
+#$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADERS)
+#	@mkdir -p .obj
+#	@$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
+#	@echo "$(ITALIC)$(BLUE)Compiled $< successfully$(RESET)"
+
 re: fclean all
 
 fclean: clean
-	@rm -f $(NAME) $(LIBFT)
+	@rm -f $(NAME) $(LIBFT) checker
 	@echo "$(BOLD)$(RED)❌ Removed $(NAME) and libft.a$(RESET)"
 
 clean:
@@ -66,4 +79,4 @@ clean:
 	@make clean -C ./Libft -s
 	@echo "$(BOLD)$(RED)❌ Removed $(OBJ_DIR)$(RESET)"
 
-.PHONY: all clean fclean re $(LIBFT)
+.PHONY: all clean fclean re $(LIBFT) bonus
