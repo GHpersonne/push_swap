@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:47:19 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/22 15:36:16 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:13:51 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,6 @@ void		ft_rra(t_stack **a, t_stack **b, int true);
 void		ft_rrb(t_stack **a, t_stack **b, int true);
 void		ft_rrr(t_stack **a, t_stack **b, int true);
 
-void		checker(t_stack **stack_a, t_stack **stack_b);
+int			checker(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:40:24 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/22 16:43:47 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:13:14 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_cmp(t_stack **stack_a, t_stack **stack_b, char *line)
 	return (1);
 }
 
-void	checker(t_stack **stack_a, t_stack **stack_b)
+int	checker(t_stack **stack_a, t_stack **stack_b)
 {
 	char	*line;
 
@@ -59,10 +59,9 @@ void	checker(t_stack **stack_a, t_stack **stack_b)
 		line = get_next_line(0);
 	}
 	if (*stack_b || !ft_is_sorted(*stack_a))
-		ft_putstr_fd("KO\n", 1);
+		return (free(line), 1);
 	else
-		ft_putstr_fd("OK\n", 1);
-	free(line);
+		return (free(line), 0);
 }
 
 int	main(int ac, char **av)
@@ -77,7 +76,10 @@ int	main(int ac, char **av)
 		ft_error();
 	}
 	stack_b = 0;
-	checker(&stack_a, &stack_b);
+	if (checker(&stack_a, &stack_b) == 0)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
 	free_double_stack(&stack_a, &stack_b, 0);
 	return (0);
 }
