@@ -6,12 +6,11 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:40 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/22 15:49:15 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:29:16 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_circle_sort(t_stack **stack_a, t_stack **stack_b)
 {

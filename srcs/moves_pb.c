@@ -6,12 +6,11 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:21 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 16:41:26 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:30:25 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	rarbsb(t_stack *stack_a, t_stack *stack_b, int c)
 {

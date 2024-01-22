@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:31:53 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/13 19:28:06 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:33:06 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,6 @@ long long	ft_atoi(const char *str)
 		if (str[i++] == '-')
 			sign = -1;
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
-	{
-/* 		if (res != (res * 10 + str[i] - '0') / 10)
-		{
-			if (sign == -1)
-				return (LONG_MIN);
-			return (LONG_MAX);
-		} */
 		res = (res * 10) + (str[i++] - '0');
-	}
 	return (res * sign);
-	//return (ft_strtoll(str));
 }

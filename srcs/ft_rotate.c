@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:18 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/22 15:37:58 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:29:45 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ void	ft_rr(t_stack **a, t_stack **b, int true)
 		if (write(1, "rr\n", 3) == -1)
 			free_double_stack(a, b, 1);
 }
-

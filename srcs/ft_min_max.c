@@ -6,12 +6,11 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:43:54 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 17:36:19 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:29:09 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	ft_stack_size(t_stack *stack)
 {
