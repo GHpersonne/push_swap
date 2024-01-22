@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 00:48:40 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/19 17:14:40 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:49:15 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_circle_sort(t_stack **stack_a, t_stack **stack_b)
 	if (ft_stack_size(*stack_a) / 2 > ft_find_index(*stack_a, \
 		ft_min(*stack_a)))
 		while (ft_find_index(*stack_a, ft_min(*stack_a)))
-			ft_ra(stack_a, stack_b);
+			ft_ra(stack_a, stack_b, 1);
 	else
 		while (ft_find_index(*stack_a, ft_min(*stack_a)))
-			ft_rra(stack_a, stack_b);
+			ft_rra(stack_a, stack_b, 1);
 }
 
 void	ft_sort_push_b(t_stack **stack_a, t_stack **stack_b)
@@ -77,7 +77,7 @@ void	ft_sort(t_stack **stack_a)
 
 	stack_b = 0;
 	if (ft_stack_size(*stack_a) == 2)
-		ft_sa(stack_a);
+		ft_sa(stack_a, &stack_b, 1);
 	else if (ft_stack_size(*stack_a) == 3)
 		ft_sort_three(stack_a, &stack_b);
 	else
@@ -86,9 +86,9 @@ void	ft_sort(t_stack **stack_a)
 			ft_circle_sort(stack_a, &stack_b);
 		else
 		{
-			ft_pb(stack_a, &stack_b);
+			ft_pb(stack_a, &stack_b, 1);
 			if (ft_stack_size(*stack_a) > 3 && !ft_is_sorted(*stack_a))
-				ft_pb(stack_a, &stack_b);
+				ft_pb(stack_a, &stack_b, 1);
 			while (ft_stack_size(*stack_a) > 3 && !ft_is_sorted(*stack_a))
 				ft_sort_push_b(stack_a, &stack_b);
 			if (ft_stack_size(*stack_a) == 3 && !ft_is_sorted(*stack_a))

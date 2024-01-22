@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:43:18 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/21 16:52:45 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:37:58 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,28 @@ static void	rotate(t_stack **stack)
 	first->next->next = NULL;
 }
 
-void	ft_ra(t_stack **a, t_stack **b)
+void	ft_ra(t_stack **a, t_stack **b, int true)
 {
 	rotate(a);
-	if (write(1, "ra\n", 3) == -1)
-		free_double_stack(a, b, 1);
+	if (true == 1)
+		if (write(1, "ra\n", 3) == -1)
+			free_double_stack(a, b, 1);
 }
 
-void	ft_rb(t_stack **a, t_stack **b)
+void	ft_rb(t_stack **a, t_stack **b, int true)
 {
 	rotate(b);
-	if (write(1, "rb\n", 3) == -1)
-		free_double_stack(a, b, 1);
+	if (true == 1)
+		if (write(1, "rb\n", 3) == -1)
+			free_double_stack(a, b, 1);
 }
 
-void	ft_rr(t_stack **a, t_stack **b)
+void	ft_rr(t_stack **a, t_stack **b, int true)
 {
 	rotate(a);
 	rotate(b);
-	if (write(1, "rr\n", 3) == -1)
-		free_double_stack(a, b, 1);
+	if (true == 1)
+		if (write(1, "rr\n", 3) == -1)
+			free_double_stack(a, b, 1);
 }
 

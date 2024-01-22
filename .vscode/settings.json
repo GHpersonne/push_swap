@@ -14,5 +14,6 @@
 		"system_error": "c",
 		"tuple": "c",
 		"vector": "c"
-	}
+	},
+	"cmake.configureOnOpen": false
 }

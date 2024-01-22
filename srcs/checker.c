@@ -6,44 +6,44 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:40:24 by anjambon          #+#    #+#             */
-/*   Updated: 2024/01/22 00:03:48 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:43:47 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "../../Libft/get_next_line_bonus.h"
-#include "../../Libft/libft.h"
+#include "../Libft/get_next_line_bonus.h"
+#include "../Libft/libft.h"
 
 int	ft_cmp(t_stack **stack_a, t_stack **stack_b, char *line)
 {
-	if (ft_strncmp(line, "pa\n", 3))
-		ft_pa(stack_a, stack_b);
-	else if (ft_strncmp(line, "pb\n", 3))
-		ft_pb(stack_a, stack_b);
-	else if (ft_strncmp(line, "sa\n", 3))
-		ft_sa(stack_a);
-	else if (ft_strncmp(line, "sb\n", 3))
-		ft_sb(stack_b);
-	else if (ft_strncmp(line, "ss\n", 3))
-		ft_ss(stack_a, stack_b);
-	else if (ft_strncmp(line, "ra\n", 3))
-		ft_ra(stack_a, stack_b);
-	else if (ft_strncmp(line, "rb\n", 3))
-		ft_rb(stack_a, stack_b);
-	else if (ft_strncmp(line, "rr\n", 3))
-		ft_rr(stack_a, stack_b);
-	else if (ft_strncmp(line, "rra\n", 4))
-		ft_rra(stack_a, stack_b);
-	else if (ft_strncmp(line, "rrb\n", 4))
-		ft_rrb(stack_a, stack_b);
-	else if (ft_strncmp(line, "rrr\n", 4))
-		ft_rrr(stack_a, stack_b);
+	if (ft_strncmp(line, "pa\n", 3) == 0)
+		ft_pa(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "pb\n", 3) == 0)
+		ft_pb(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "sa\n", 3) == 0)
+		ft_sa(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "sb\n", 3) == 0)
+		ft_sb(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "ss\n", 3) == 0)
+		ft_ss(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "ra\n", 3) == 0)
+		ft_ra(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "rb\n", 3) == 0)
+		ft_rb(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "rr\n", 3) == 0)
+		ft_rr(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "rra\n", 4) == 0)
+		ft_rra(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "rrb\n", 4) == 0)
+		ft_rrb(stack_a, stack_b, 0);
+	else if (ft_strncmp(line, "rrr\n", 4) == 0)
+		ft_rrr(stack_a, stack_b, 0);
 	else
 		return (0);
 	return (1);
 }
 
-int	checker(t_stack **stack_a, t_stack **stack_b)
+void	checker(t_stack **stack_a, t_stack **stack_b)
 {
 	char	*line;
 
@@ -58,7 +58,7 @@ int	checker(t_stack **stack_a, t_stack **stack_b)
 		free(line);
 		line = get_next_line(0);
 	}
-	if (*stack_b || !ft_is_sorted(stack_a))
+	if (*stack_b || !ft_is_sorted(*stack_a))
 		ft_putstr_fd("KO\n", 1);
 	else
 		ft_putstr_fd("OK\n", 1);
@@ -77,7 +77,7 @@ int	main(int ac, char **av)
 		ft_error();
 	}
 	stack_b = 0;
-	checker(stack_a, stack_b);
-	free_double_stack(stack_a, stack_b, 0);
+	checker(&stack_a, &stack_b);
+	free_double_stack(&stack_a, &stack_b, 0);
 	return (0);
 }

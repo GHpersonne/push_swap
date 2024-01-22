@@ -6,7 +6,7 @@
 /*   By: anjambon <anjambon@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 00:47:01 by anjambon          #+#    #+#             */
-/*   Updated: 2023/12/20 17:30:51 by anjambon         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:56:08 by anjambon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ char	*ft_read_and_sav(int fd, char *sav_buff)
 	line = NULL;
 	if (sav_buff[0] != '\0')
 	{
-		line = ft_strjoin(line, sav_buff);
+		line = ft_strjoin_gnl(line, sav_buff);
 		if (!line)
 			return (NULL);
 	}
 	count = 1;
-	while (!ft_strchr(sav_buff, '\n') && count > 0)
+	while (!ft_strchr_gnl(sav_buff, '\n') && count > 0)
 	{
 		count = read(fd, sav_buff, BUFFER_SIZE);
 		if (count < 0)
@@ -77,7 +77,7 @@ char	*ft_read_and_sav(int fd, char *sav_buff)
 		if ((count == 0 && sav_buff[0] == '\0'))
 			return (free(line), NULL);
 		sav_buff[count] = '\0';
-		line = ft_strjoin(line, sav_buff);
+		line = ft_strjoin_gnl(line, sav_buff);
 		if (!line)
 			return (NULL);
 	}
