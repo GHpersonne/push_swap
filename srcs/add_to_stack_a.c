@@ -51,7 +51,7 @@ t_stack	*args_in_stack_a(int argc, char **argv)
 	while (i < argc)
 	{
 		check_digits(argv[i], &stack_a);
-		nb = ft_atoi(argv[i]);
+		nb = ft_atoi(argv[i], &stack_a);
 		check_limits(nb, &stack_a);
 		add_to_stack(&stack_a, nb);
 		i++;
